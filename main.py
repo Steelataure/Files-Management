@@ -1,7 +1,30 @@
 import shutil
 from os import walk
+from tkinter import *
+import tkinter.font as font
 
 # Script permettant de déplacer les fichiers afin de mettre de l'ordre
+
+root = Tk()
+root.title("SteelFiles Management")
+root.resizable(width=False, height=False)
+
+window_width = 650
+window_height = 680
+
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+x_cordinate = int((screen_width / 2) - (window_width / 2))  # Permet de mettre la fenêtre au milieu
+y_cordinate = int((screen_height / 2) - (window_height / 2))
+
+root.geometry(f"{window_width}x{window_height}+{x_cordinate}+{y_cordinate}")
+
+# ----------------------------------
+font_entry = font.Font(size=15, family='ArialBlack')
+
+path_tri = Entry(width=22, borderwidth=4)
+path_tri['font'] = font_entry
+path_tri.pack(pady=100)
 
 files_image = []
 files_videos = []
@@ -16,7 +39,8 @@ path_sound = '/Users/alexa/Downloads/son'
 
 listeFichiers = []
 
-for (repertoire, sousRepertoires, fichiers) in walk(path_download):
+
+'''for (repertoire, sousRepertoires, fichiers) in walk(path_download):
     listeFichiers.extend(fichiers)
 
     print(fichiers)
@@ -48,4 +72,6 @@ for file in files_rar:
     shutil.move(file, path_rar)
 
 for file in files_son:
-    shutil.move(file, path_sound)
+    shutil.move(file, path_sound)'''
+
+root.mainloop()
