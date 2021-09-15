@@ -1,10 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import shutil
 import tkinter.font as font
 from os import walk
 from pathlib import Path
 from tkinter import *
 
-# Script permettant de déplacer les fichiers afin de mettre de l'ordre
+
+print(f'---------------------------Intructions---------------------------\n'
+      f'\n'
+      f'Ce programme permet de déplacer beaucoup de fichiers facilement et rapidement\n'
+      f'\n'
+      f"Vous avez juste à indiquer le dossier d'où proviennent les fichiers\n"
+      f"et les dossiers de destinations \n"
+      f"\n"
+      f"Steel")
 
 root = Tk()
 
@@ -28,7 +39,6 @@ label1 = Label(root, image=background)
 label1.place(x=-2, y=-2)
 
 vide = Frame(None).grid(row=0, pady=60)
-
 
 # root.overrideredirect(1)
 
@@ -168,7 +178,10 @@ def enable_trie():
 
     for (repertoire, sousRepertoires, fichiers) in walk(path_base):
         listeFichiers.extend(fichiers)
-        print(fichiers)
+        print(f'\n'
+              f'--------------------------------------------------\n'
+              f'\n'
+              f'{fichiers}')
 
         for x in fichiers:
 
@@ -203,10 +216,10 @@ def enable_trie():
         # Enlever le break pour trier même les sous répertoires
 
     print(f'----------------\n'
-          f'> {len(files_son)} fichiers images ont été déplacés')
+          f'> {len(files_image)} fichiers images ont été déplacés')
 
     print(f'----------------\n'
-          f'> {len(files_image)} fichiers audios ont été déplacés')
+          f'> {len(files_son)} fichiers audios ont été déplacés')
 
     print(f'----------------\n'
           f'> {len(files_videos)} fichiers vidéos ont été déplacés')
