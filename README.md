@@ -7,7 +7,7 @@ Le but de l'application est de pouvoir déplacer beaucoup de fichiers vers d'aut
 
 ## Aperçu
 
-![Aperçu](https://github.com/Steelataure/SteelFiles-Management/blob/start/assets/Steelfiles%20apercu.PNG 'SteelFiles Management')
+![Aperçu](https://github.com/Steelataure/SteelFiles-Management/blob/start/assets/apercu.PNG 'SteelFiles Management')
 
 ## A venir
 
