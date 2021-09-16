@@ -27,10 +27,11 @@ Le programme consomme vraiment rien en ressources en le laissant en arrière-pla
 
 ***
 
-## A venir
+## Possibilités
 
 * Ajout d'une catégorie pour les fichiers compilés (.rar, .zip etc...)
 * Ajout catégorie par nom de fichier
+* Choix des formats déplacés
 * En recherche
 
 
