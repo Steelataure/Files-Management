@@ -23,7 +23,7 @@ y_cordinate = int((screen_height / 2) - (window_height / 2))
 
 root.geometry(f"{window_width}x{window_height}+{x_cordinate}+{y_cordinate}")
 
-background = PhotoImage(file='assets/doc6.png')
+background = PhotoImage(file='assets/mieux.png')
 root.iconbitmap("assets/rubic.ico")
 
 label1 = Label(root, image=background)
@@ -35,13 +35,12 @@ vide = Frame(None).grid(row=0, pady=60)
 
 # ----------------------------------
 
-
+dest_color = '#faae7d'
 text_color = 'black'
-color_bg = '#e8c292'
+color_bg = '#f7c76e'
 
 font_entry = font.Font(size=12, family='ArialBlack', weight='bold')
-
-path_label1 = Label(root, text='Déplacer depuis', bg=color_bg)
+path_label1 = Label(root, text="Dossier d'origine", bg='#faaf7c')
 path_label1['font'] = font_entry
 path_tri = Entry(root, borderwidth=3, width=30, fg=text_color, bg=color_bg)
 
@@ -71,22 +70,22 @@ listeFichiers = []
 
 Entry_sound = Entry(root, width=30, borderwidth=3, fg=text_color, bg=color_bg)
 Entry_sound['font'] = font_entry
-path_label2 = Label(root, text='Dossier de destination', bg=color_bg)
+path_label2 = Label(root, text='Dossier de destination', bg=dest_color)
 path_label2['font'] = font_entry
 
 Entry_image = Entry(root, width=30, borderwidth=3, fg=text_color, bg=color_bg)
 Entry_image['font'] = font_entry
-path_label3 = Label(root, text='Dossier de destination', bg=color_bg)
+path_label3 = Label(root, text='Dossier de destination', bg=dest_color)
 path_label3['font'] = font_entry
 
 Entry_video = Entry(root, width=30, borderwidth=3, fg=text_color, bg=color_bg)
 Entry_video['font'] = font_entry
-path_label4 = Label(root, text='Dossier de destination', bg=color_bg)
+path_label4 = Label(root, text='Dossier de destination', bg=dest_color)
 path_label4['font'] = font_entry
 
 Entry_doctexte = Entry(root, width=30, borderwidth=3, fg=text_color, bg=color_bg)
 Entry_doctexte['font'] = font_entry
-path_label5 = Label(root, text='Dossier de destination', bg=color_bg)
+path_label5 = Label(root, text='Dossier de destination', bg=dest_color)
 path_label5['font'] = font_entry
 
 # -------------------------------------------
@@ -144,7 +143,7 @@ tri_video = Checkbutton(root, text='Déplacer les fichiers vidéos',
 tri_video['font'] = font_entry
 tri_video.grid(row=6, column=1, pady=10, ipadx=20)
 
-tri_doctexte = Checkbutton(root, text='Déplacerles fichiers textes',
+tri_doctexte = Checkbutton(root, text='Déplacer les fichiers textes',
                            onvalue=1, offvalue=0, variable=checked_doctexte, command=active_check, bg=color_bg)
 tri_doctexte['font'] = font_entry
 tri_doctexte.grid(row=8, column=1, pady=10, ipadx=20)
