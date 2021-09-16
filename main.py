@@ -1,24 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import shutil
+import time
 import tkinter.font as font
 from os import walk
 from pathlib import Path
 from tkinter import *
 
-
-print(f'---------------------------Intructions---------------------------\n'
-      f'\n'
-      f'Ce programme permet de déplacer beaucoup de fichiers facilement et rapidement\n'
-      f'\n'
-      f"Vous avez juste à indiquer le dossier d'où proviennent les fichiers\n"
-      f"et les dossiers de destinations \n"
-      f"\n"
-      f"Steel")
-
 root = Tk()
-
 root.title("SteelFiles Management")
 root.resizable(width=False, height=False)
 
@@ -33,7 +24,7 @@ y_cordinate = int((screen_height / 2) - (window_height / 2))
 root.geometry(f"{window_width}x{window_height}+{x_cordinate}+{y_cordinate}")
 
 background = PhotoImage(file='assets/doc6.png')
-root.iconbitmap("assets/logoo.ico")
+root.iconbitmap("assets/rubic.ico")
 
 label1 = Label(root, image=background)
 label1.place(x=-2, y=-2)
@@ -163,11 +154,12 @@ format_image = ['.jpg', '.gif', '.png', '.PNG', '.ico', '.webp', '.jpeg']
 format_video = ['.mp4', '.avi', '.mkv', '.mov', '.webm', '.mpeg']
 format_doctexte = ['.txt', '.pdf', '.doc', '.ppt', '.pps', '.rtf', '.xml']
 
-
 # ---------------------------------------
+script_back = 0
+
 
 def enable_trie():
-    global listeFichiers, fichiers, file
+    global listeFichiers, fichiers, script_back
 
     n = 0
     path_base = Entry.get(path_tri)
@@ -177,7 +169,7 @@ def enable_trie():
     path_doctexte = Entry.get(Entry_doctexte)
 
     for (repertoire, sousRepertoires, fichiers) in walk(path_base):
-        listeFichiers.extend(fichiers)
+        # listeFichiers.extend(fichiers)
         print(f'\n'
               f'--------------------------------------------------\n'
               f'\n'
@@ -225,26 +217,44 @@ def enable_trie():
           f'> {len(files_videos)} fichiers vidéos ont été déplacés')
 
     print(f'----------------\n'
-          f'> {len(files_doctexte)} fi'
-          f'chiers documents/textes ont été déplacés')
+          f'> {len(files_doctexte)} fichiers documents/textes ont été déplacés')
 
     for file in files_image:
-        shutil.move(file, path_image)
+        if os.path.isfile(file):
+            shutil.copy2(file, path_image)
+            os.remove(file)
 
     for file in files_son:
-        shutil.move(file, path_sound)
-
-    for file in files_videos:
-        shutil.move(file, path_videos)
+        if os.path.isfile(file):
+            shutil.copy2(file, path_sound)
+            os.remove(file)
 
     for file in files_doctexte:
-        shutil.move(file, path_doctexte)
+        if os.path.isfile(file):
+            shutil.copy2(file, path_doctexte)
+            os.remove(file)
 
-    '''for file in files_rar:
-        shutil.move(file, path_rar)'''
+    for file in files_videos:
+        if os.path.isfile(file):
+            shutil.copy2(file, video_path)
+            os.remove(file)
+
+    # for file in files_rar:
+    #    shutil.move(file, path_rar)'''
+
+
+def automatique():
+    script_back = 1
+    while script_back == 1:
+        root.withdraw()
+        time.sleep(8)
+        enable_trie()
 
 
 # ---------------------------------------------------------
+
+
+# Cache la fenêtre
 
 Entry_image.insert(END, image_path)
 Entry_sound.insert(END, music_path)
@@ -253,5 +263,9 @@ Entry_video.insert(END, video_path)
 submit = Button(root, text='Start', command=enable_trie, width=20, bg=color_bg, borderwidth=3)
 submit.grid(row=12, column=1, pady=20, padx=140)
 submit['font'] = font_entry
+
+auto = Button(root, text='Trie automatique', command=automatique, width=20, bg=color_bg, borderwidth=3)
+auto.grid(row=13, column=1, pady=2, padx=140)
+auto['font'] = font_entry
 
 root.mainloop()
