@@ -5,6 +5,12 @@
 Application permettant de mieux organiser ses fichiers,  
 Le but de l'application est de pouvoir déplacer beaucoup de fichiers vers d'autres dossiers (selon leurs formats)
 
+
+## Installation
+
+Pour utiliser ce logiciel, c'est simple, il suffit de télécharger via [Releases](https://github.com/Steelataure/SteelFiles-Management/releases/tag/Steelfiles-Management)  
+Un fois téléchargé il suffit de l'extraire et de lancer l'exécutable ou le raccourci dans le dossier centre  
+
 ## Aperçu
 
 ![Aperçu](https://github.com/Steelataure/SteelFiles-Management/blob/start/assets/apercu.PNG 'SteelFiles Management')
