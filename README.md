@@ -9,7 +9,7 @@ Le but de l'application est de pouvoir déplacer beaucoup de fichiers vers d'aut
 ## Installation
 
 Pour utiliser ce logiciel, c'est simple, il suffit de télécharger via [Releases](https://github.com/Steelataure/SteelFiles-Management/releases/tag/Steelfiles-Management)  
-Un fois téléchargé il suffit de l'extraire et de lancer l'exécutable ou le raccourci dans le dossier centre  
+Un fois téléchargé il suffit de l'extraire et de lancer l'exécutable depuis le dossier output
 
 ## Aperçu
 
