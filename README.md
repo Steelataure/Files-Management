@@ -2,14 +2,14 @@
 
 ## Description
 
-Application permettant de mieux organiser ses fichiers,  
-Le but de l'application est de pouvoir déplacer beaucoup de fichiers vers d'autres dossiers (selon leurs formats)
+Application permettant de mieux organiser ses fichiers.  
+Le but de l'application est de pouvoir déplacer beaucoup de fichiers vers d'autres dossiers (selon leurs formats) et automatiquement.
 
 
 ## Installation
 
 Pour utiliser ce logiciel, c'est simple, il suffit de télécharger via [Releases](https://github.com/Steelataure/SteelFiles-Management/releases/tag/Steelfiles-Management)  
-Un fois téléchargé il suffit de l'extraire et de lancer l'exécutable depuis le dossier output
+Un fois téléchargée il suffit de l'extraire et de lancer l'exécutable depuis le dossier output
 
 ## Aperçu
 
@@ -25,14 +25,6 @@ Le programme consomme vraiment rien en ressources en le laissant en arrière-pla
 ### **Petit aperçu**
 ![consommation](https://github.com/Steelataure/SteelFiles-Management/blob/start/assets/consommation.PNG)
 
-***
-
-## Possibilités
-
-* Ajout d'une catégorie pour les fichiers compilés (.rar, .zip etc...)
-* Ajout catégorie par nom de fichier
-* Choix des formats déplacés
-* En recherche
 
 
 ## Auteur
